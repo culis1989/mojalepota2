@@ -1,6 +1,6 @@
 class SalonsController < ApplicationController
   before_action :set_salon, only: [:show, :edit, :update, :destroy]
-  layout "admin"
+  layout :resolve_layout
 
   # GET /salons
   # GET /salons.json
@@ -71,5 +71,14 @@ class SalonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def salon_params
       params.require(:salon).permit(:name, :description, :address)
+    end
+
+    def resolve_layout
+      case action_name
+      when "new", "create", "index"
+        "admin"
+      else
+        "application"
+      end
     end
 end
