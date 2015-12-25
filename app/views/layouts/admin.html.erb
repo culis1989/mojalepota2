@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <ul>
+    <li><%= link_to 'Visit Website', root_path, :target => "_blank" %></li>
+    <li><%= link_to 'Dashboard', dashboard_path(@dashboard) %></li>
+    <li><%= link_to 'Edit Salons', salons_path(@salons) %></li>
+  </ul>
   <h1>ADMIN AREA</h1>
-
+  <hr>
 <%= yield %>
 
 </body>
