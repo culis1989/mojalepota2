@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<ul>
+  <li><%= link_to 'Dashboard', dashboard_path(@dashboard) %></li>
+</ul>
 <%= yield %>
 
 </body>
