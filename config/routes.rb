@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :salons
   # SET HOMEPAGE
   root to: 'home#index'
 
